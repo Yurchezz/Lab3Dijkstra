@@ -22,10 +22,18 @@ public class Main {
          graph.addVertex(3,1,0);
          graph.getVertices().add(new Vertex(2));
 
-         for (int i = 0; i < graph.getVertices().size(); i++){
-             System.out.println(graph.getVertices().get(i).getLabel());
-         }
+
         graph.showGraph();
-         System.out.println( dijkstra(graph, new Vertex(0,3,8)));
+         List<Integer> distances = new ArrayList<>();
+         distances = dijkstra(graph, new Vertex(5,0,9));
+         System.out.println( "довжини шляхів: " + distances );
+         double distances_sum = 0;
+         for (int i = 0; i < graph.getVertices().size(); i++){
+             distances_sum += distances.get(i);
+         }
+
+         System.out.println("середня довжина шляхів: " + distances_sum/(distances.size()-1));
+
+
     }
 }

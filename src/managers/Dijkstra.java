@@ -31,6 +31,7 @@ public class Dijkstra {
         }
 
         while (visit_list.size() > 0){
+
             shortest_distance_vertex = visit_list.get(0);
             shortest_distance_index = 0;
 
